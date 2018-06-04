@@ -9,7 +9,7 @@ export default class FileData extends React.Component {
   render() {
     console.log(this.props.file);
     return (
-      <Table striped responsive size='sm' style={{ marginTop: '20px' }}>
+      <Table striped borderless hover responsive>
         <thead>
           <tr>
             <th>#</th>

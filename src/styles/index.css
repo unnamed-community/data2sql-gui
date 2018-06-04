@@ -7,6 +7,14 @@ img {
   -webkit-user-drag: none;
 }
 
+.no-padding {
+  padding: 0 !important;
+}
+
+.no-margin {
+  padding: 0 !important;
+}
+
 .separate-border {
   padding: 20px 0;
 }
@@ -15,4 +23,9 @@ img {
   line-height: 80px;
   font-size: 40px;
   margin-top: 50px;
+  color: gray
+}
+
+.dark-background {
+  background-color: rgba(246, 248, 248, 0.89);
 }

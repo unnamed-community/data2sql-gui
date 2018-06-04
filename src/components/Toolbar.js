@@ -82,17 +82,17 @@ export default class Toolbar extends React.Component {
     if (this.props.withFile) {
       return (
         <div>
-          <Button color='danger' onClick={this.closeFile} style={{ marginRight: 10 }}>
+          <Button outline color='danger' onClick={this.closeFile} style={{ marginRight: 10 }}>
             <Icon icon={remove} /> Close File
           </Button>
-          <Button color='info' onClick={this.exportToSQL}>
+          <Button outline color='info' onClick={this.exportToSQL}>
             <Icon icon={save} /> Export to SQL
           </Button>
         </div>
       );
     } else {
       return (
-        <Button color='info' onClick={this.openFile}>
+        <Button outline color='info' onClick={this.openFile}>
           <Icon icon={folderOpen} /> Open File
         </Button>
       );

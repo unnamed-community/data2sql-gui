@@ -23,7 +23,7 @@ export default class Info extends React.Component {
     if (this.props.withFile) {
       return (
         <div>
-          <Nav tabs>
+          <Nav tabs className='dark-background'>
             <NavItem>
               <NavLink
                 className={classnames({ active: this.state.activeTab === '1' })}
@@ -43,18 +43,10 @@ export default class Info extends React.Component {
           </Nav>
           <TabContent activeTab={this.state.activeTab}>
             <TabPane tabId="1">
-              <Row>
-                <Col sm="12">
-                  <FileData file={this.props.app.state.file} />
-                </Col>
-              </Row>
+              <FileData file={this.props.app.state.file} />
             </TabPane>
             <TabPane tabId="2">
-              <Row>
-                <Col sm="12">
-                  <h4>Tab 2 Contents</h4>
-                </Col>
-              </Row>
+              <h4>Tab 2 Contents</h4>
             </TabPane>
           </TabContent>
         </div>

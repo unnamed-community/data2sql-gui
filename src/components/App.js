@@ -13,10 +13,12 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <Container fluid>
-        <Toolbar withFile={!!this.state.file} app={this} />
+      <div>
+        <Container fluid className='dark-background'>
+          <Toolbar withFile={!!this.state.file} app={this} />
+        </Container>
         <Info withFile={!!this.state.file} app={this} />
-      </Container>
+      </div>
     );
   }
 }
