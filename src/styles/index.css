@@ -6,3 +6,13 @@ html, body {
 img {
   -webkit-user-drag: none;
 }
+
+.separate-border {
+  padding: 20px 0;
+}
+
+.home-icon {
+  line-height: 80px;
+  font-size: 40px;
+  margin-top: 50px;
+}
