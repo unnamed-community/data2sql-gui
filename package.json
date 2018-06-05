@@ -47,10 +47,15 @@
     "webpack-cli": "^3.0.1"
   },
   "dependencies": {
+    "autodetect-decoder-stream": "^1.0.0",
     "bootstrap": "^4.1.1",
+    "classnames": "^2.2.5",
+    "csv-reader": "^1.0.3",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "react-icons-kit": "^1.1.5",
-    "reactstrap": "^6.0.1"
+    "reactstrap": "^6.0.1",
+    "sqlstring": "^2.3.1",
+    "xlsx": "^0.13.0"
   }
 }
