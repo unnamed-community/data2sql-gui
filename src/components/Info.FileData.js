@@ -7,7 +7,6 @@ export default class FileData extends React.Component {
   }
 
   render() {
-    console.log(this.props.file);
     return (
       <Table striped borderless hover responsive>
         <thead>

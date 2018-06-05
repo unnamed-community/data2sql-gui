@@ -2,6 +2,7 @@ import React from 'react';
 import classnames from 'classnames';
 import { Container, TabContent, TabPane, Nav, NavItem, NavLink, Row, Col } from 'reactstrap';
 import FileData from './Info.FileData';
+import ExportOptions from './Info.ExportOptions';
 import { Icon } from 'react-icons-kit';
 import { fileO } from 'react-icons-kit/fa/fileO';
 
@@ -46,7 +47,7 @@ export default class Info extends React.Component {
               <FileData file={this.props.app.state.file} />
             </TabPane>
             <TabPane tabId="2">
-              <h4>Tab 2 Contents</h4>
+              <ExportOptions app={this.props.app} />
             </TabPane>
           </TabContent>
         </div>

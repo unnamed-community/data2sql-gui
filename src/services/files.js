@@ -31,7 +31,8 @@ function getCSVData(filepath, separator) {
 
 function getExcelData(filepath, sheet) {
   return new Promise((resolve, reject) => {
-    let parsed = xlsx.utils.sheet_to_json(workbook.Sheets[sheet])
+    let workbook = xlsx.readFile(filepath);
+    let parsed = xlsx.utils.sheet_to_json(workbook.Sheets[sheet]);
     if (parsed.length <= 0) {
       reject(`The sheet ${sheet} does not have data.`);
     } else {
@@ -66,7 +67,7 @@ export default {
     if (!this.fileExists(filepath)) return null;
 
     try {
-      let workbook = xlsx.readFile(filepath);
+      let workbook = xlsx.readFile(filepath, { bookSheets: true });
       return workbook.SheetNames;
     } catch (error) {
       return null;

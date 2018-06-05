@@ -7,7 +7,10 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      file: null
+      file: null,
+      tableName: 'default',
+      collation: 'utf8',
+      createTable: true
     }
   }
 
