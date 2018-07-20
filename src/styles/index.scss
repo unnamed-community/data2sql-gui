@@ -1,0 +1,19 @@
+@import "~semantic-ui-css/semantic.min.css";
+
+html,
+body {
+  user-select: none;
+  cursor: default;
+}
+
+img {
+  -webkit-user-drag: none;
+}
+
+.space-top {
+  margin-top: 20px !important;
+}
+
+.cursor-pointer {
+  cursor: pointer !important;
+}
