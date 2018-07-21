@@ -8,25 +8,28 @@ function getCSVData(filepath, separator) {
   return new Promise((resolve, reject) => {
     let rows = [];
     try {
-      let inputStream = fs.createReadStream(filepath)
+      let inputStream = fs
+        .createReadStream(filepath)
         .pipe(new AutodetectDecoderStream({ defaultEncodig: '1258' }));
 
       inputStream
-        .pipe(csvReader({
-          trim: true,
-          delimiter: separator,
-          skipEmptyLines: true
-        }))
+        .pipe(
+          csvReader({
+            trim: true,
+            delimiter: separator,
+            skipEmptyLines: true,
+          })
+        )
         .on('data', row => rows.push(row))
         .on('end', data => {
           let headers = rows.shift();
-          resolve({ headers, rows })
+          resolve({ headers, rows });
         })
         .on('error', reject);
     } catch (error) {
       reject(error);
     }
-  })
+  });
 }
 
 function getExcelData(filepath, sheet) {
@@ -42,10 +45,10 @@ function getExcelData(filepath, sheet) {
         let fields = [];
         Object.keys(e).forEach(i => fields.push(e[i]));
         rows.push(fields);
-      })
+      });
       resolve({ headers, rows });
     }
-  })
+  });
 }
 
 export default {
@@ -83,5 +86,5 @@ export default {
     }
 
     return null;
-  }
-}
+  },
+};

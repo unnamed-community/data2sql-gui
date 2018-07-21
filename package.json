@@ -1,36 +1,62 @@
 {
   "name": "data2sql-gui",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Tool for create SQL script from data set.",
-  "main": "main.js",
+  "main": "./prod/main.js",
+  "build": {
+    "productName": "Data2SQL",
+    "appId": "io.github.unnamed-community.data2sql",
+    "files": {
+      "filter": [
+        "package.json",
+        "prod/**",
+        "locales/**",
+        "!node_modules${/*}"
+      ]
+    },
+    "directories": {
+      "output": "dist",
+      "buildResources": "./resources"
+    },
+    "win": {
+      "target": "msi",
+      "icon": "./resources/icon.ico"
+    },
+    "linux": {
+      "target": "deb",
+      "icon": "./resources/icon.png"
+    }
+  },
   "scripts": {
-    "start": "electron .",
-    "dev": "electron . --debug",
-    "compile": "webpack --mode development",
-    "build": "webpack --mode production"
+    "start": "npm run build-prod && electron .",
+    "dev": "webpack --watch --mode development --config config/webpack/webpack.dev.config.js",
+    "build-prod": "webpack --mode production --config config/webpack/webpack.prod.config.js",
+    "dist-linux": "npm run build-prod && electron-builder --linux",
+    "dist-windows": "npm run build-prod && electron-builder --windows",
+    "precommit": "lint-staged"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/unnamed-community/data2sql-gui.git"
+    "url": "git+https://github.com/unnamed-community/electron-semantic-boilerplate.git"
   },
   "keywords": [
     "electron",
     "react",
-    "bootstrap",
-    "reactstrap",
+    "semantic",
     "sql",
     "excel",
     "csv"
   ],
   "author": {
     "name": "Aris Julio",
-    "url": "https://arisjulio.github.io/"
+    "url": "https://arisjulio.github.io/",
+    "email": "aj.julio@hotmail.com"
   },
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/unnamed-community/data2sql-gui/issues"
+    "url": "https://github.com/unnamed-community/electron-semantic-boilerplate/issues"
   },
-  "homepage": "https://github.com/unnamed-community/data2sql-gui#readme",
+  "homepage": "https://github.com/unnamed-community/electron-semantic-boilerplate#readme",
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
@@ -39,23 +65,44 @@
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.11",
     "electron": "^2.0.2",
-    "electron-reload": "^1.2.2",
+    "electron-builder": "^20.15.1",
+    "electron-connect": "^0.6.3",
     "file-loader": "^1.1.11",
     "html-webpack-plugin": "^3.2.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.2.0",
+    "node-sass": "^4.9.2",
+    "prettier": "^1.13.7",
+    "sass-loader": "^7.0.3",
     "style-loader": "^0.21.0",
     "webpack": "^4.10.2",
-    "webpack-cli": "^3.0.1"
+    "webpack-cli": "^3.0.1",
+    "webpack-electron-connect-plugin": "^1.0.4",
+    "webpack-merge": "^4.1.2"
   },
   "dependencies": {
     "autodetect-decoder-stream": "^1.0.0",
-    "bootstrap": "^4.1.1",
-    "classnames": "^2.2.5",
     "csv-reader": "^1.0.3",
+    "i18n": "^0.8.3",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
-    "react-icons-kit": "^1.1.5",
-    "reactstrap": "^6.0.1",
+    "semantic-ui-css": "^2.3.1",
+    "semantic-ui-react": "^0.81.1",
     "sqlstring": "^2.3.1",
-    "xlsx": "^0.13.0"
+    "xlsx": "^0.13.2"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --trailing-comma es5 --single-quote --write",
+      "git add"
+    ],
+    "*.scss": [
+      "prettier --parser scss --write",
+      "git add"
+    ],
+    "*.md": [
+      "prettier --parser markdown --write",
+      "git add"
+    ]
   }
 }

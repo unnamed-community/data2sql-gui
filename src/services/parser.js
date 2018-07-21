@@ -14,7 +14,7 @@ export default {
     out += `INSERT INTO ${tableName} (${headers}) VALUES ${EOL}`;
     rows.map((e, i) => {
       out += `(${e})${lastRow === i ? ';' : ','}${EOL}`;
-    })
+    });
     return out;
   },
   getCreateTable(data, tableName, collation) {
@@ -29,5 +29,5 @@ export default {
     out += ` ENGINE=InnoDB DEFAULT CHARSET=${collation};${EOL + EOL}`;
 
     return out;
-  }
-}
+  },
+};

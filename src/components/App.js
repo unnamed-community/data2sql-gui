@@ -1,27 +1,35 @@
-import React from 'react';
-import { Container } from 'reactstrap';
-import Toolbar from './Toolbar';
-import Info from './Info';
+import React, { Component } from 'react';
+import { Tab, Container } from 'semantic-ui-react';
+import ExportProperties from './ExportProperties';
+import FileData from './FileData';
 
-export default class App extends React.Component {
+export default class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      file: null,
-      tableName: 'default',
-      collation: 'utf8',
-      createTable: true
-    }
   }
 
+  getTabs = () => {
+    return [
+      {
+        menuItem: __('export_properties'),
+        render: () => (
+          <Tab.Pane style={{ height: '100%' }}>
+            <ExportProperties parent={this} />
+          </Tab.Pane>
+        ),
+      },
+      {
+        menuItem: __('file_data'),
+        render: () => (
+          <Tab.Pane style={{ height: '100%' }}>
+            <FileData file={this.props.parent.state.file} parent={this} />
+          </Tab.Pane>
+        ),
+      },
+    ];
+  };
+
   render() {
-    return (
-      <div>
-        <Container fluid className='dark-background'>
-          <Toolbar withFile={!!this.state.file} app={this} />
-        </Container>
-        <Info withFile={!!this.state.file} app={this} />
-      </div>
-    );
+    return <Tab panes={this.getTabs()} />;
   }
 }
