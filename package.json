@@ -81,11 +81,15 @@
     "webpack-merge": "^4.1.2"
   },
   "dependencies": {
+    "autodetect-decoder-stream": "^1.0.0",
+    "csv-reader": "^1.0.3",
     "i18n": "^0.8.3",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "semantic-ui-css": "^2.3.1",
-    "semantic-ui-react": "^0.81.1"
+    "semantic-ui-react": "^0.81.1",
+    "sqlstring": "^2.3.1",
+    "xlsx": "^0.13.2"
   },
   "lint-staged": {
     "*.js": [
