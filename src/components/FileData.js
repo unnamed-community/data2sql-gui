@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
-import {
-  Container,
-  Divider,
-  Table,
-} from '../../node_modules/semantic-ui-react';
+import { Container, Divider, Table } from 'semantic-ui-react';
 
 export default class FileData extends Component {
   constructor(props) {
