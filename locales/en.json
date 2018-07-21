@@ -1,3 +1,22 @@
 {
-  
+  "letsgo": "Let's Go!",
+  "letsgo_description": "Select a file to start",
+  "open_file": "Open",
+  "separator": "Separator",
+  "sheet": "Sheet",
+  "continue": "Continue",
+  "back": "Back",
+  "table_name": "Table name",
+  "collation": "Collation",
+  "add_create_table": "Add 'CREATE TABLE' statement",
+  "export": "Export",
+  "export_file": "Export file",
+  "file_data": "File data",
+  "export_properties": "Export properties",
+  "msg_file_saved": "File saved successfully",
+  "error_file_does_not_exists": "The file %s doesn't exists",
+  "error_invalid_format": "The file %s must be a CSV or Excel.",
+  "error_cant_be_readed": "The file %s can't be readed or have not content.",
+  "error_incorrect_path": "Select a valiud path",
+  "error_cant_save": "Can't save the file in %s"
 }

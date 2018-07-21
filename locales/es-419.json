@@ -13,10 +13,10 @@
 	"export_file": "Exportar archivo",
 	"file_data": "Datos del archivo",
 	"export_properties": "Propiedades de exportación",
-	"msg_file_saved": "Archivo guardado con éxito.",
-	"error_file_does_not_exists": "El archivo %s no existe.",
-	"error_invalid_format": "El archivo %s debe ser del formato CSV o Excel.",
-	"error_cant_be_readed": "El archivo %s no puede ser leido o no tiene contenido.",
-	"error_incorrect_path": "Seleccione una ruta válida.",
+	"msg_file_saved": "Archivo guardado con éxito",
+	"error_file_does_not_exists": "El archivo %s no existe",
+	"error_invalid_format": "El archivo %s debe ser del formato CSV o Excel",
+	"error_cant_be_readed": "El archivo %s no puede ser leido o no tiene contenido",
+	"error_incorrect_path": "Seleccione una ruta válida",
 	"error_cant_save": "No se puede guardar el archivo en %s"
 }
